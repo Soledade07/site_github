@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* paleta de cores monocromática - verde do claro para o escuro
+#c5ebd6 
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/* import na outra fonte pq eu não posso dois fontface; */
+
+@import url("https://fonts.google.com/specimen/Bebas+Neue?query=bebas");
+
+@font-face {
+    font-family: 'Android';
+    src: url(../fonts/IDroid.otf);
+    font-weight: normal;
+}
+
+/*variaveis */
+:root {   /*declaração de variaveis */
+
+    --vcor0: #c5ebd6;
+    --vcor1: #83e1ad;
+    --vcor2: #3ddc84;
+    --vcor3: #2fa866;
+    --vcor4: #1a5c37;
+    --vcor5: #063d1e;
+
+    --vfonte-padrao: Arial, Verdadna, Helvetica, sans-serif;
+    --vfonte-destaque: 'bebas Neue', cursive;
+    --vfonte-android: 'Android', cursive;
+}
+
+/* responsividade é a possibilidade do site se adequear aos maios variados tamanhos de tela.
+para isso é sempre interessante definir um tamanha maximo lateral (largura) do site, para dessa forma ele não expandir os textos de forma que crie dificuldade para leitura de textos e não vaze (apareça o fundo indesejado do site ou barra de relagem) que é indicação que o site não está preparado para aquele tamanho de tela */
+
+/*há possibilidade de confifurar todos os elementos  
+opçcao 1:  
+p, h1, h2, h3 { margin: 0px}
+ou usar uma tipo de configuração global o simbolo para definir é "*"
+*/
+
+/*todos os elementos h1, h2, h3 são naturalmente(padrão) negrito mas, pode-se retirar esse padrao utlizando o comando
+font-wheight: 'normal';
+
+ {   /*significa: todos os elementos */
+* {    margin: 0px;
+       padding: 0px;
+}
+
+body {
+/*    background-color: #c5ebd6; */
+    background-color: var(--vcor0);
+    font-family: var(--vfonte-padrao);
+}
+
+a.externo::after {
+    content: '\1F517';
+}
+
+header {
+/*    background-color: var(--vcor4); */
+    background-image: linear-gradient(to bottom, var(--vcor3), var(--vcor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+nav {
+    background-color: var(--vcor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.336);
+}
+
+nav >a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav >a:hover {
+    background-color: var(--vcor3);
+    color: var(--vcor5);
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--vfonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+header >p {
+    font-family: var(--vfonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--vcor5);
+    font-family: 'Android';
+}
+
+main h2 {
+    color: var(--vcor4);
+    font-family: var(--vfonte-android);
+    font-size: 1.3em;
+    font-weight: 'normal';
+    background-image: linear-gradient(to right, var(--vcor1), transparent);
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+/*    width: 50%;   */
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+div.video {
+    background-color: var(--vcor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58%;
+    position: relative;
+}
+
+div.video >iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90% ;
+    height: 90%;
+}
+main p {   /*todos os paragrafos do main */
+    margin: 15px 0px 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;  /*altura entre linhas */
+    font-size: 1em;
+}
+
+main strong {   /*todos os strong do main */
+    color: var(--vcor4);
+    font-weight: bold;
+}
+
+main a {   /* links */
+    text-decoration: none;
+    font-weight: bold;
+    color:var(--vcor5);
+    background-color: var(--vcor1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--vcor4)
+}
+
+aside {
+    background-color: var(--vcor1);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+aside >ul {     /*lista */
+    list-style-type: '\2714\00A0\00A0';  /* site emojipedia, pesquisar, check, 2714 emoji, para dar espaço acrescento 00A0 (não compativel com todos navegadores */  
+    list-style-position: inside;
+    columns: 2;
+
+}
+
+aside >h3 {     /*lista */
+    background-color: var(--vcor3);
+    color: white;
+    padding: 10;
+    margin: -10px; /*para colar o texto no top do box */
+
+}
+
+footer {
+    background-color: var(--vcor5);
+    font-family: var(--vfonte-padrao); 
+    color: white;
+    text-align: center;
+    font-size: .8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--vcor1);
+}
